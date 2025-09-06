@@ -1,0 +1,19 @@
+/* For TailwindCSS & DaisyUI IntelliSense only */
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --color-gray: rgba(92, 92, 92, 1);
+  --background-image-hero-section: linear-gradient(
+    90deg,
+    rgba(1, 50, 35, 1),
+    rgba(0, 103, 71, 1) 50%,
+    rgba(1, 50, 35, 1) 100%
+  );
+}
+@layer components {
+  .info-badge {
+    @apply py-2 md:py-3 rounded-full;
+  }
+}
