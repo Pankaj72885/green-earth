@@ -22,6 +22,8 @@
     <style type="text/tailwindcss">
       @theme {
         --font-inter: "Inter", sans-serif;
+        --color-main-primary: rgba(21, 128, 61, 1);
+        --color-mai-secondary: rgba(250, 204, 21, 1);
       }
     </style>
 
@@ -30,7 +32,60 @@
 
     <title>Green Earth</title>
   </head>
-  <body>
-    <h1 class="text-5xl font-bold underline">Hello world!</h1>
+  <body class="font-inter">
+    <!-- Navbar Section -->
+    <nav
+      class="navbar bg-base-100 shadow-sm md:px-34 md:py-6 bg-main-primary text-white"
+    >
+      <div class="navbar-start">
+        <!-- Mobile menu -->
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <!-- Mobile Menu Item -->
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-main-primary/85 rounded-box z-1 mt-3 w-52 p-2 shadow text-base font-medium"
+          >
+            <li><a>About</a></li>
+            <li><a>Gallery</a></li>
+            <li><a>Plant a Tree</a></li>
+          </ul>
+        </div>
+        <!-- Logo/Name -->
+        <a href="./index.html" class="text-xl sm:text-2xl font-bold"
+          >Green Earth</a
+        >
+      </div>
+      <!-- Menu Items -->
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 font-medium text-base">
+          <li><a>About</a></li>
+          <li><a>Gallery</a></li>
+          <li><a>Plant a Tree</a></li>
+        </ul>
+      </div>
+      <!-- Plant a Tree button -->
+      <div class="navbar-end width-auto">
+        <a
+          class="btn bg-mai-secondary hover:bg-mai-secondary/85 rounded-full text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-3"
+          >Plant a Tree</a
+        >
+      </div>
+    </nav>
   </body>
 </html>

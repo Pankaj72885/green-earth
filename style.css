@@ -4,7 +4,8 @@
 
 @theme {
   --font-inter: "Inter", sans-serif;
-  --color-gray: rgba(92, 92, 92, 1);
+  --color-main-primary: rgba(21, 128, 61, 1);
+  --color-mai-secondary: rgba(250, 204, 21, 1);
   --background-image-hero-section: linear-gradient(
     90deg,
     rgba(1, 50, 35, 1),
