@@ -24,6 +24,15 @@
         --font-inter: "Inter", sans-serif;
         --color-main-primary: rgba(21, 128, 61, 1);
         --color-mai-secondary: rgba(250, 204, 21, 1);
+        --color-neutral-dark: rgba(31, 41, 55, 1);
+      }
+      @layer components {
+        .primary-btn {
+          @apply bg-mai-secondary hover:bg-mai-secondary/85 rounded-full text-center text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-2 cursor-pointer;
+        }
+        .hero-leaves-bg {
+          @apply bg-no-repeat bg-auto lg:bg-[url('./src/assets/hero-leaf1.png'),_url('./src/assets/hero-leaf2.png')] bg-[position:left_center,_right_center];
+        }
       }
     </style>
 
@@ -81,11 +90,24 @@
       </div>
       <!-- Plant a Tree button -->
       <div class="navbar-end width-auto">
-        <a
-          class="btn bg-mai-secondary hover:bg-mai-secondary/85 rounded-full text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-3"
-          >Plant a Tree</a
-        >
+        <a class="primary-btn">Plant a Tree</a>
       </div>
     </nav>
+    <!-- Banner Section -->
+    <section class="hero hero-leaves-bg bg-[#CFF0DC] min-h-96">
+      <div
+        class="hero-content text-center text-neutral-dark max-w-full p-0 m-0"
+      >
+        <!-- Banner Content -->
+        <div class=" max-w-[40rem] px-4">
+          <h1 class="mb-5 text-5xl font-bold">Plant a Tree, Grow a Future</h1>
+          <p class="mb-5">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+          <button class="primary-btn">Get Started</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

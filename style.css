@@ -6,6 +6,7 @@
   --font-inter: "Inter", sans-serif;
   --color-main-primary: rgba(21, 128, 61, 1);
   --color-mai-secondary: rgba(250, 204, 21, 1);
+  --color-neutral-dark: rgba(31, 41, 55, 1);
   --background-image-hero-section: linear-gradient(
     90deg,
     rgba(1, 50, 35, 1),
@@ -14,7 +15,7 @@
   );
 }
 @layer components {
-  .info-badge {
-    @apply py-2 md:py-3 rounded-full;
+  .primary-btn {
+    @apply btn bg-mai-secondary hover:bg-mai-secondary/85 rounded-full text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-3 cursor-pointer;
   }
 }
