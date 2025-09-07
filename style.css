@@ -4,8 +4,10 @@
 
 @theme {
   --font-inter: "Inter", sans-serif;
+  --color-bg-primary: rgba(220, 252, 231, 1);
+  --color-neutral-dark: #1f2937;
   --color-main-primary: rgba(21, 128, 61, 1);
-  --color-mai-secondary: rgba(250, 204, 21, 1);
+  --color-main-secondary: rgba(250, 204, 21, 1);
   --color-neutral-dark: rgba(31, 41, 55, 1);
   --background-image-hero-section: linear-gradient(
     90deg,

@@ -22,13 +22,15 @@
     <style type="text/tailwindcss">
       @theme {
         --font-inter: "Inter", sans-serif;
+        --color-bg-primary: rgba(240, 253, 244, 1);
+        --color-neutral-dark: rgba(31, 41, 55, 1);
         --color-main-primary: rgba(21, 128, 61, 1);
-        --color-mai-secondary: rgba(250, 204, 21, 1);
+        --color-main-secondary: rgba(250, 204, 21, 1);
         --color-neutral-dark: rgba(31, 41, 55, 1);
       }
       @layer components {
         .primary-btn {
-          @apply bg-mai-secondary hover:bg-mai-secondary/85 rounded-full text-center text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-2 cursor-pointer;
+          @apply bg-main-secondary hover:bg-main-secondary/85 rounded-full text-center text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-2 cursor-pointer;
         }
         .hero-leaves-bg {
           @apply bg-no-repeat bg-auto lg:bg-[url('./src/assets/hero-leaf1.png'),_url('./src/assets/hero-leaf2.png')] bg-[position:left_center,_right_center];
@@ -99,7 +101,7 @@
         class="hero-content text-center text-neutral-dark max-w-full p-0 m-0"
       >
         <!-- Banner Content -->
-        <div class=" max-w-[40rem] px-4">
+        <div class="max-w-[40rem] px-4">
           <h1 class="mb-5 text-5xl font-bold">Plant a Tree, Grow a Future</h1>
           <p class="mb-5">
             Join our mission to plant 1 million trees and make the Earth greener
@@ -109,5 +111,102 @@
         </div>
       </div>
     </section>
+    <!-- main -->
+    <main class="px-34 py-25 min-h-96 bg-bg-primary">
+      <!-- Heading -->
+      <h1 class="text-neutral-dark text-3xl font-semibold text-center pb-10">
+        Choose Your Trees
+      </h1>
+      <!-- Main section -->
+      <section class="grid grid-cols-7 gap-7.5">
+        <!-- Categories  -->
+        <aside>
+          <h1 class="font-semibold text-xl">Categories</h1>
+        </aside>
+        <!-- Main Card Section -->
+        <main class="col-span-5 grid grid-cols-3 gap-7.5">
+          <!-- Card -->
+          <div class="bg-white p-4 rounded-lg space-y-4">
+            <img src="./src/assets/image.png" alt="" />
+            <div class="space-y-3">
+              <h1 class="text-sm font-semibold text-neutral-dark">
+                Mango Tree
+              </h1>
+              <p class="text-xs font-medium text-neutral-dark/80">
+                A fast-growing tropical tree that produces delicious, juicy
+                mangoes during summer. Its dense green
+              </p>
+              <div class="flex justify-between">
+                <button
+                  class="px-3 py-1 bg-[#DCFCE7] text-[#15803D] rounded-full"
+                >
+                  Fruit Tree
+                </button>
+                <p class="text-sm font-semibold">৳ <span>500</span></p>
+              </div>
+            </div>
+            <button
+              class="bg-main-primary w-full rounded-full p-3 text-white font-medium"
+            >
+              Add To Card
+            </button>
+          </div>
+          <div class="bg-white p-4 rounded-lg space-y-4">
+            <img src="./src/assets/image.png" alt="" />
+            <div class="space-y-3">
+              <h1 class="text-sm font-semibold text-neutral-dark">
+                Mango Tree
+              </h1>
+              <p class="text-xs font-medium text-neutral-dark/80">
+                A fast-growing tropical tree that produces delicious, juicy
+                mangoes during summer. Its dense green
+              </p>
+              <div class="flex justify-between">
+                <button
+                  class="px-3 py-1 bg-[#DCFCE7] text-[#15803D] rounded-full"
+                >
+                  Fruit Tree
+                </button>
+                <p class="text-sm font-semibold">৳ <span>500</span></p>
+              </div>
+            </div>
+            <button
+              class="bg-main-primary w-full rounded-full p-3 text-white font-medium"
+            >
+              Add To Card
+            </button>
+          </div>
+          <div class="bg-white p-4 rounded-lg space-y-4">
+            <img src="./src/assets/image.png" alt="" />
+            <div class="space-y-3">
+              <h1 class="text-sm font-semibold text-neutral-dark">
+                Mango Tree
+              </h1>
+              <p class="text-xs font-medium text-neutral-dark/80">
+                A fast-growing tropical tree that produces delicious, juicy
+                mangoes during summer. Its dense green
+              </p>
+              <div class="flex justify-between">
+                <button
+                  class="px-3 py-1 bg-[#DCFCE7] text-[#15803D] rounded-full"
+                >
+                  Fruit Tree
+                </button>
+                <p class="text-sm font-semibold">৳ <span>500</span></p>
+              </div>
+            </div>
+            <button
+              class="bg-main-primary w-full rounded-full p-3 text-white font-medium"
+            >
+              Add To Card
+            </button>
+          </div>
+        </main>
+        <!-- Cart Section -->
+        <aside>
+          <h1 class="font-semibold text-xl">Your Cart</h1>
+        </aside>
+      </section>
+    </main>
   </body>
 </html>
