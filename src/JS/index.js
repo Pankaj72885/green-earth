@@ -183,8 +183,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Listen for clicks on category buttons
   categoriesContainer.addEventListener("click", (event) => {
-    const categoryId = event.target.dataset.id;
+    // Use .closest() to get the button element, even if text inside is clicked
+    const clickedButton = event.target.closest(".btn");
+
+    // If the click wasn't on a button, do nothing
+    if (!clickedButton) return;
+
+    const categoryId = clickedButton.dataset.id;
+
     if (categoryId) {
+      //logic for the active state
+
+      // Get a list of all buttons in the container
+      const allButtons = categoriesContainer.querySelectorAll(".btn");
+
+      // Loop through all buttons and REMOVE the active class
+      allButtons.forEach((button) => {
+        button.classList.remove("btn-active");
+        button.classList.remove("btn-success");
+      });
+
+      // ADD the active class ONLY to the button that was clicked
+      clickedButton.classList.add("btn-active");
+      clickedButton.classList.add("btn-success");
+
+      // --- The existing logic to fetch trees stays the same ---
       fetchTreesByCategory(categoryId);
     }
   });
