@@ -127,10 +127,19 @@
           <div id="categories-container" class="space-y-1"></div>
         </aside>
         <!-- Main Card Section -->
-        <main
-          id="trees-container"
-          class="md:col-span-5 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-4 md:gap-7.5"
-        ></main>
+        <main id="trees-container" class="md:col-span-5">
+          <!-- Spinner -->
+          <div id="loading-spinner" class="text-center p-10 hidden">
+            <span
+              class="loading loading-spinner loading-lg text-primary"
+            ></span>
+          </div>
+
+          <div
+            id="trees-card-container"
+            class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-4 md:gap-7.5"
+          ></div>
+        </main>
 
         <aside class="lg:col-span-1 bg-gray-100 p-4 rounded-lg">
           <h3 class="text-xl font-semibold mb-4">Your Cart</h3>

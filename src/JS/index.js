@@ -45,18 +45,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fetches trees for a specific category
   const fetchTreesByCategory = (categoryId) => {
+    const spinner = document.getElementById("loading-spinner");
+    const treesCardContainer = document.getElementById("trees-card-container");
+
+    // Show the spinner and clear old cards
+    spinner.classList.remove("hidden");
+    treesCardContainer.innerHTML = "";
+
     const treesApiUrl = `https://openapi.programming-hero.com/api/category/${categoryId}`;
     fetch(treesApiUrl)
       .then((response) => response.json())
       .then((data) => {
         currentTrees = data.plants; // Save the currently displayed trees
         displayTrees(currentTrees);
+      })
+      .catch((error) => {
+        // Handle potential network errors
+        console.error("Failed to fetch trees:", error);
+        treesCardContainer.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load trees. Please try again.</p>`;
+      })
+      .finally(() => {
+        // ALWAYS hide the spinner at the end
+        spinner.classList.add("hidden");
       });
   };
 
   // Displays all the tree cards in the center column
   const displayTrees = (trees) => {
-    treesContainer.innerHTML = "";
+    const treesCardContainer = document.getElementById("trees-card-container");
+    treesCardContainer.innerHTML = "";
     let treesHTML = "";
     trees.forEach((tree) => {
       treesHTML += `
@@ -93,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
     });
-    treesContainer.innerHTML = treesHTML;
+    treesCardContainer.innerHTML = treesHTML;
   };
 
   // --- MODAL FUNCTIONS ---
