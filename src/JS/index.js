@@ -27,7 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Displays the category buttons in the sidebar
   const displayCategories = (categories) => {
-    let buttonsHTML = "";
+    // Start the HTML string with new button, already active
+    let buttonsHTML = `
+    <button
+      data-id="all"
+      class="btn btn-ghost w-full justify-start btn-active btn-success"
+    >
+      All Trees
+    </button>
+  `;
     categories.forEach((category) => {
       buttonsHTML += `
         <button 
@@ -42,6 +50,26 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // --- TREE FUNCTIONS ---
+
+  // Fetches All trees
+  const fetchAllTrees = () => {
+    const spinner = document.getElementById("loading-spinner");
+    const treesCardContainer = document.getElementById("trees-card-container");
+    // Show the spinner and clear old cards
+    spinner.classList.remove("hidden");
+    treesCardContainer.innerHTML = "";
+
+    const allTreesApiUrl = "https://openapi.programming-hero.com/api/plants";
+    fetch(allTreesApiUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        currentTrees = data.plants;
+        displayTrees(currentTrees);
+      })
+      .catch((error) => console.error("Failed to fetch all trees", error))
+      // ALWAYS hide the spinner at the end
+      .finally(() => spinner.classList.add("hidden"));
+  };
 
   // Fetches trees for a specific category
   const fetchTreesByCategory = (categoryId) => {
@@ -224,8 +252,12 @@ document.addEventListener("DOMContentLoaded", () => {
       clickedButton.classList.add("btn-active");
       clickedButton.classList.add("btn-success");
 
-      // --- The existing logic to fetch trees stays the same ---
-      fetchTreesByCategory(categoryId);
+      // Check if the 'all' button was clicked
+      if (categoryId === "all") {
+        fetchAllTrees();
+      } else {
+        fetchTreesByCategory(categoryId);
+      }
     }
   });
 
@@ -252,4 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- INITIALIZATION ---
   // Kick everything off by fetching the categories
   fetchAllCategories();
+  // Kick everything off by fetching All trees
+  fetchAllTrees();
 });
