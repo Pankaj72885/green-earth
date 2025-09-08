@@ -1,6 +1,6 @@
 /* For TailwindCSS & DaisyUI IntelliSense only */
 @import "tailwindcss";
-@plugin "daisyui";
+/* @plugin "daisyui";
 
 @theme {
   --font-inter: "Inter", sans-serif;
@@ -20,4 +20,4 @@
   .primary-btn {
     @apply btn bg-mai-secondary hover:bg-mai-secondary/85 rounded-full text-sm sm:text-base font-medium text-main-primary border-0 px-5 py-3 cursor-pointer;
   }
-}
+} */
