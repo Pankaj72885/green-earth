@@ -66,8 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTrees = data.plants;
         displayTrees(currentTrees);
       })
-      .catch((error) => console.error("Failed to fetch all trees", error))
-      // ALWAYS hide the spinner at the end
+      .catch((error) => {
+        // Handle potential network errors
+        console.error("Failed to fetch all trees:", error);
+        treesCardContainer.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load all trees. Please try again.</p>`;
+      })
+      // Always hide the spinner at the end
       .finally(() => spinner.classList.add("hidden"));
   };
 
@@ -237,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoryId = clickedButton.dataset.id;
 
     if (categoryId) {
-      //logic for the active state
+      //logic for active state
 
       // Get a list of all buttons in the container
       const allButtons = categoriesContainer.querySelectorAll(".btn");
@@ -248,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.classList.remove("btn-success");
       });
 
-      // ADD the active class ONLY to the button that was clicked
+      // ADD the active class only to the button that was clicked
       clickedButton.classList.add("btn-active");
       clickedButton.classList.add("btn-success");
 
